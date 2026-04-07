@@ -1,0 +1,695 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KINETIC ARCHITECT | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&amp;family=Public+Sans:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#fcecea",
+              "outline-variant": "#e5e2df",
+              "on-primary-fixed": "#ffffff",
+              "inverse-surface": "#1c1b1a",
+              "on-error": "#ffffff",
+              "surface-container": "#f7f3f0",
+              "on-error-container": "#560004",
+              "surface-container-low": "#fdf9f6",
+              background: "#fdf9f6",
+              "surface-tint": "#560004",
+              "on-secondary": "#ffffff",
+              "secondary-dim": "#7d6d6a",
+              "surface-container-highest": "#e5e2df",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#001d33",
+              primary: "#560004",
+              tertiary: "#004a77",
+              "on-primary-container": "#410002",
+              "on-secondary-fixed": "#2c1a17",
+              "surface-bright": "#fffbff",
+              "on-secondary-fixed-variant": "#5a4441",
+              "on-tertiary-fixed-variant": "#004a77",
+              "tertiary-fixed-dim": "#a2c9ff",
+              "surface-container-high": "#f1edea",
+              secondary: "#745b57",
+              surface: "#fdf9f6",
+              "tertiary-fixed": "#d1e4ff",
+              "primary-dim": "#ffb4ab",
+              "tertiary-container": "#d1e4ff",
+              "on-primary-fixed-variant": "#93000a",
+              outline: "#857371",
+              "inverse-on-surface": "#fdf9f6",
+              "on-tertiary": "#ffffff",
+              "on-background": "#1c1b1a",
+              "surface-dim": "#e1ddd9",
+              "primary-fixed-dim": "#ffb4ab",
+              "primary-fixed": "#ffdad6",
+              "surface-variant": "#f5dedb",
+              "secondary-fixed-dim": "#e3bdb7",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1c1b1a",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#2b1614",
+              "on-surface-variant": "#534341",
+              "inverse-primary": "#ffb4ab",
+              "error-dim": "#ffb4ab",
+              "on-tertiary-container": "#001d33",
+              "secondary-fixed": "#ffdad6",
+              error: "#ba1a1a",
+              "secondary-container": "#ffdad6",
+              "tertiary-dim": "#a2c9ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+              lg: "1rem",
+              xl: "1.25rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Epilogue"],
+              body: ["Public Sans"],
+              label: ["Public Sans"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #fdf9f6;
+        color: #1c1b1a;
+        scroll-behavior: smooth;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .soft-glow:hover {
+        box-shadow: 0 10px 30px -10px rgba(86, 0, 4, 0.15);
+      }
+      .warm-card {
+        background: #ffffff;
+        border: 1px solid rgba(28, 27, 26, 0.05);
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .warm-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+      }
+      .bg-soft-texture {
+        background-color: #fdf9f6;
+        background-image: radial-gradient(#56000408 1.5px, transparent 1.5px);
+        background-size: 32px 32px;
+      }
+    </style>
+  </head>
+  <body
+    class="font-body selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopNavBar Component -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#fdf9f6]/80 backdrop-blur-md shadow-sm"
+    >
+      <div
+        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
+      >
+        <div
+          class="text-2xl font-bold font-epilogue text-[#560004] tracking-tighter"
+        >
+          PORTAFOLIO PROFESIONAL
+        </div>
+        <div class="hidden md:flex items-center space-x-10">
+          <a
+            class="font-epilogue tracking-tight leading-tight text-[#560004] font-bold border-b-2 border-[#560004] pb-1"
+            href="#hero"
+            >Work</a
+          >
+          <a
+            class="font-epilogue tracking-tight leading-tight text-[#1c1b1a]/60 hover:text-[#560004] transition-colors"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="font-epilogue tracking-tight leading-tight text-[#1c1b1a]/60 hover:text-[#560004] transition-colors"
+            href="#projects"
+            >Experience</a
+          >
+          <a
+            class="font-epilogue tracking-tight leading-tight text-[#1c1b1a]/60 hover:text-[#560004] transition-colors"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="px-5 py-2 text-sm font-bold font-headline text-[#560004] hover:bg-[#f7f3f0] rounded-xl transition-all duration-300"
+          >
+            Download CV
+          </button>
+          <button
+            class="bg-[#560004] text-white px-6 py-2 rounded-xl font-bold font-headline hover:bg-[#7a0006] transition-all duration-300 active:scale-95"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-[90vh] flex items-center pt-24 px-8 overflow-hidden bg-soft-texture"
+      id="hero"
+    >
+      <div
+        class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center"
+      >
+        <div class="lg:col-span-7 z-10">
+          <div
+            class="inline-block px-4 py-1.5 rounded-full bg-primary-container text-primary text-sm font-semibold tracking-wide mb-8"
+          >
+            Full Stack Developer &amp; Software Architect
+          </div>
+          <h1
+            class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-on-background mb-8"
+          >
+            Building <span class="text-primary">Digital</span> Experiences with
+            Impact.
+          </h1>
+          <p
+            class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed font-normal mb-10"
+          >
+            I bridge the gap between complex engineering and human-centered
+            design, crafting high-performance web applications that users love
+            and businesses trust.
+          </p>
+          <div class="flex flex-wrap gap-5">
+            <button
+              class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold font-headline flex items-center gap-3 soft-glow transition-all hover:bg-[#7a0006]"
+            >
+              View My Work
+              <span class="material-symbols-outlined text-xl">east</span>
+            </button>
+            <button
+              class="px-8 py-4 rounded-xl font-bold font-headline text-on-surface border border-outline-variant hover:bg-surface-container-high transition-all"
+            >
+              Technical Stack
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative">
+          <div
+            class="relative z-10 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white"
+          >
+            <img
+              alt="Professional profile"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuATb4-SIglmWR8LliZTLlAloivvxCAg_Ts4BLVdX5aPPxCLk6JeQ9PTZdD6PiSOlJ9dPQmex-zQNNifW9Ls3hHjyzORQnBeDTqEEVvHcdzv8bhPXlPc_DCwWkuFpJTCEMdjvrgrOaKjityPYGQzXqRiRhe1EomHNJpXggg0WOL-d6Q9dXe-CvZgAI-gBH9w0iQq3qur-3nTX9y_M2Y-4QE5iMr8KViAEwW1-vtPwdniZKd5ZfPvLVgXvGTaHynSbSuHoMmfBeiHGog"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 text-white">
+              <p class="font-headline font-bold text-xl">
+                Human-Centric Approach
+              </p>
+              <p class="text-sm opacity-90">Architecture designed for people</p>
+            </div>
+          </div>
+          <div
+            class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-container rounded-full -z-10 blur-2xl opacity-60"
+          ></div>
+          <div
+            class="absolute -top-6 -left-6 w-48 h-48 bg-tertiary-container rounded-full -z-10 blur-3xl opacity-40"
+          ></div>
+        </div>
+      </div>
+    </section>
+    <!-- About Me Section -->
+    <section class="py-32 px-8 bg-white" id="about">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2
+              class="font-headline text-4xl md:text-5xl font-bold tracking-tight mb-8"
+            >
+              The <span class="text-primary">Philosophy</span> behind the code
+            </h2>
+            <div
+              class="space-y-6 text-on-surface-variant text-lg leading-relaxed"
+            >
+              <p>
+                Technology is a tool for connection. I believe that every line
+                of code should serve a purpose: making digital environments more
+                intuitive, accessible, and reliable for the people who use them.
+              </p>
+              <p>
+                With a focus on **empathy-driven development**, I prioritize
+                clean architecture not just for technical excellence, but to
+                ensure long-term scalability and ease of use for fellow
+                developers and end-users alike.
+              </p>
+            </div>
+            <div class="mt-12 flex gap-10">
+              <div>
+                <div class="text-4xl font-extrabold text-primary mb-1">8+</div>
+                <div
+                  class="text-sm font-semibold uppercase tracking-wider text-secondary"
+                >
+                  Years Experience
+                </div>
+              </div>
+              <div>
+                <div class="text-4xl font-extrabold text-primary mb-1">45+</div>
+                <div
+                  class="text-sm font-semibold uppercase tracking-wider text-secondary"
+                >
+                  Projects Delivered
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div
+              class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/20 transition-colors"
+            >
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-2xl"
+                  data-icon="data_object"
+                  >data_object</span
+                >
+              </div>
+              <h4 class="font-headline font-bold text-lg mb-4">
+                React / Next.js
+              </h4>
+              <div
+                class="w-full bg-outline-variant h-1.5 rounded-full overflow-hidden"
+              >
+                <div class="bg-primary h-full w-[95%]"></div>
+              </div>
+              <p class="mt-4 text-sm text-on-surface-variant">
+                Building modern, responsive interfaces with performance in mind.
+              </p>
+            </div>
+            <div
+              class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/20 transition-colors"
+            >
+              <div
+                class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-6"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-2xl"
+                  data-icon="terminal"
+                  >terminal</span
+                >
+              </div>
+              <h4 class="font-headline font-bold text-lg mb-4">Node.js</h4>
+              <div
+                class="w-full bg-outline-variant h-1.5 rounded-full overflow-hidden"
+              >
+                <div class="bg-secondary h-full w-[88%]"></div>
+              </div>
+              <p class="mt-4 text-sm text-on-surface-variant">
+                Developing robust backend systems and efficient API
+                architectures.
+              </p>
+            </div>
+            <div
+              class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/20 transition-colors"
+            >
+              <div
+                class="w-12 h-12 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6"
+              >
+                <span
+                  class="material-symbols-outlined text-tertiary text-2xl"
+                  data-icon="cloud"
+                  >cloud</span
+                >
+              </div>
+              <h4 class="font-headline font-bold text-lg mb-4">AWS / Cloud</h4>
+              <div
+                class="w-full bg-outline-variant h-1.5 rounded-full overflow-hidden"
+              >
+                <div class="bg-tertiary h-full w-[82%]"></div>
+              </div>
+              <p class="mt-4 text-sm text-on-surface-variant">
+                Managing scalable infrastructure and cloud-native deployments.
+              </p>
+            </div>
+            <div
+              class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/20 transition-colors"
+            >
+              <div
+                class="w-12 h-12 bg-primary-dim/20 rounded-xl flex items-center justify-center mb-6"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-2xl"
+                  data-icon="database"
+                  >database</span
+                >
+              </div>
+              <h4 class="font-headline font-bold text-lg mb-4">PostgreSQL</h4>
+              <div
+                class="w-full bg-outline-variant h-1.5 rounded-full overflow-hidden"
+              >
+                <div class="bg-primary h-full w-[90%] opacity-70"></div>
+              </div>
+              <p class="mt-4 text-sm text-on-surface-variant">
+                Designing optimized database schemas for complex data needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Grid -->
+    <section class="py-32 px-8 bg-surface-container-low" id="projects">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8"
+        >
+          <div class="max-w-2xl">
+            <h2
+              class="font-headline text-4xl md:text-6xl font-extrabold tracking-tight mb-6"
+            >
+              Selected <span class="text-primary">Experience</span>
+            </h2>
+            <p class="text-on-surface-variant text-lg">
+              A showcase of digital products where technical excellence meets
+              purposeful design.
+            </p>
+          </div>
+          <div
+            class="hidden md:flex items-center gap-3 text-secondary font-semibold text-sm tracking-widest uppercase"
+          >
+            <span class="w-12 h-0.5 bg-secondary/30"></span> Portfolio [2024]
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Project Card 1 -->
+          <div
+            class="warm-card rounded-2xl overflow-hidden flex flex-col shadow-sm"
+          >
+            <div
+              class="h-60 bg-surface-container-highest relative group overflow-hidden"
+            >
+              <img
+                alt="Nexus Dashboard"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuADpF54vGqQ1FQwuDEBTbYwUAQ7j4iS29tziw_Kk7HLonnwjVX5GEBhTC-fZbrmq8p-iqPgRvTeoL_Uv2bB83sJgZePDi8DbG4MG3u1m55FKP27aPZ2ziRQm8ws9-fsfzHB1AKo1NqDuSrovH3vM40NAxZRHGW1iTycbrQo7sqXoOBkX5c-KwDgCa-ggSv1uYt87C1Q4XQGoEfpTWfvNke5wa9MtriUHl_3kCplJSYo-VgR6XLOS620sc3ZkmR_shuZd550Xb4GVYA"
+              />
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-white/90 backdrop-blur-md text-primary text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm"
+                  >#React</span
+                >
+                <span
+                  class="bg-white/90 backdrop-blur-md text-primary text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm"
+                  >#Firebase</span
+                >
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="font-headline text-2xl font-bold mb-3 tracking-tight">
+                Nexus Analytics
+              </h3>
+              <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">
+                A high-performance dashboard designed for enterprise teams to
+                monitor cloud health in real-time with zero friction.
+              </p>
+              <div
+                class="mt-auto flex justify-between items-center pt-6 border-t border-outline-variant"
+              >
+                <a
+                  class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:translate-x-1 transition-transform"
+                  href="#"
+                >
+                  Case Study
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </a>
+                <div class="flex gap-3">
+                  <a
+                    class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined text-xl"
+                      >code</span
+                    ></a
+                  >
+                  <a
+                    class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined text-xl"
+                      >open_in_new</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div
+            class="warm-card rounded-2xl overflow-hidden flex flex-col shadow-sm"
+          >
+            <div
+              class="h-60 bg-surface-container-highest relative group overflow-hidden"
+            >
+              <img
+                alt="Void OS"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAom1PTd7snl-FCHWqtMLaebzTjiMhYU3zoPP-YlMOk6lI_2I46YjxDvg7IXdDgiELd9tLGot5G2PCjtCE0xN6u60_G0e8L4haHCTESszHUTty13jJYaotcfqfh6XBYcqZ9mhxam7X61U73IRFwfoSONkfDfA8zfMQQJaT4DDpD3z8C1p7tFf4CtQUi-_UfiPBnnhbP3zs5v5YeEcp2C3nm3fTanVq0C7wRJIUUR0bsEgjfr1dwOoerNhE_KXIWiSUyW8J90ZQEh3A"
+              />
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-white/90 backdrop-blur-md text-primary text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm"
+                  >#NextJS</span
+                >
+                <span
+                  class="bg-white/90 backdrop-blur-md text-primary text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm"
+                  >#Typescript</span
+                >
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="font-headline text-2xl font-bold mb-3 tracking-tight">
+                Void OS
+              </h3>
+              <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">
+                An minimalist web operating system built to demonstrate how
+                speed and typography can redefine user focus.
+              </p>
+              <div
+                class="mt-auto flex justify-between items-center pt-6 border-t border-outline-variant"
+              >
+                <a
+                  class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:translate-x-1 transition-transform"
+                  href="#"
+                >
+                  Case Study
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </a>
+                <div class="flex gap-3">
+                  <a
+                    class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined text-xl"
+                      >code</span
+                    ></a
+                  >
+                  <a
+                    class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined text-xl"
+                      >open_in_new</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div
+            class="warm-card rounded-2xl overflow-hidden flex flex-col shadow-sm"
+          >
+            <div
+              class="h-60 bg-surface-container-highest relative group overflow-hidden"
+            >
+              <img
+                alt="Prism Protocol"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJRqn-aXC8Y5lXtT_dMrpdofhpE8I_ka4Nsr-eNa-slP_AA-FcU2-uezC68m3n4xgJ2uaRvdsvQPQx69emu0SavAjjGZP_nylHBR8ucer2fSJwFNO24_EH7REihpU4r-gQP9T9qcvylLs4WY_AIvc39sGkDKIM8ouwm4dmrVqpj7iCiV50P0w8Al8IN5Emt4WvnS0QwRPzQzHSJAQ1sdgsuqI2ZYqsOjyP1ojZaCwSkqtMf8q5v5DG58foVKoRk_6niNTh48Dih4k"
+              />
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-white/90 backdrop-blur-md text-primary text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm"
+                  >#Web3</span
+                >
+                <span
+                  class="bg-white/90 backdrop-blur-md text-primary text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm"
+                  >#UI/UX</span
+                >
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="font-headline text-2xl font-bold mb-3 tracking-tight">
+                Prism Protocol
+              </h3>
+              <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">
+                A complex financial system simplified for everyday users,
+                featuring automated balancing and secure asset management.
+              </p>
+              <div
+                class="mt-auto flex justify-between items-center pt-6 border-t border-outline-variant"
+              >
+                <a
+                  class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:translate-x-1 transition-transform"
+                  href="#"
+                >
+                  Case Study
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </a>
+                <div class="flex gap-3">
+                  <a
+                    class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined text-xl"
+                      >code</span
+                    ></a
+                  >
+                  <a
+                    class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined text-xl"
+                      >open_in_new</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-32 px-8 bg-white" id="contact">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2
+          class="font-headline text-4xl md:text-6xl font-extrabold tracking-tight mb-8"
+        >
+          Let's build something <span class="text-primary">together.</span>
+        </h2>
+        <p
+          class="text-on-surface-variant text-lg mb-16 max-w-xl mx-auto leading-relaxed"
+        >
+          I'm currently looking for new opportunities to lead development teams
+          and architect scalable solutions. I'd love to hear about your goals.
+        </p>
+        <form
+          class="space-y-8 text-left bg-surface-container-low p-10 rounded-[2rem] border border-outline-variant/30 shadow-sm"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-2">
+              <label
+                class="text-sm font-bold text-secondary uppercase tracking-widest ml-1"
+                >Full Name</label
+              >
+              <input
+                class="w-full bg-white border border-outline-variant rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 focus:border-primary text-on-surface placeholder:text-outline-variant transition-all outline-none"
+                placeholder="Jane Doe"
+                type="text"
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                class="text-sm font-bold text-secondary uppercase tracking-widest ml-1"
+                >Email Address</label
+              >
+              <input
+                class="w-full bg-white border border-outline-variant rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 focus:border-primary text-on-surface placeholder:text-outline-variant transition-all outline-none"
+                placeholder="jane@example.com"
+                type="email"
+              />
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-bold text-secondary uppercase tracking-widest ml-1"
+              >Message</label
+            >
+            <textarea
+              class="w-full bg-white border border-outline-variant rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 focus:border-primary text-on-surface placeholder:text-outline-variant transition-all outline-none resize-none"
+              placeholder="Tell me about your project..."
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="flex justify-center pt-4">
+            <button
+              class="bg-primary text-white px-12 py-5 rounded-2xl font-bold font-headline uppercase tracking-widest soft-glow transition-all hover:bg-[#7a0006] w-full md:w-auto"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Footer Component -->
+    <footer class="bg-[#f7f3f0] w-full py-12 px-8 border-t border-[#1c1b1a]/5">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto"
+      >
+        <div class="flex flex-col items-center md:items-start gap-2">
+          <div class="font-epilogue font-bold text-lg text-[#560004]">
+            Portafolio profesional
+          </div>
+          <div class="font-public-sans text-sm tracking-wide text-[#1c1b1a]/70">
+            © 2024 The Warm Curator. Built for human connection.
+          </div>
+        </div>
+        <div class="flex gap-8">
+          <a
+            class="font-public-sans text-sm tracking-wide text-[#1c1b1a]/70 hover:text-[#560004] transition-colors"
+            href="#"
+            >LinkedIn</a
+          >
+          <a
+            class="font-public-sans text-sm tracking-wide text-[#1c1b1a]/70 hover:text-[#560004] transition-colors"
+            href="#"
+            >GitHub</a
+          >
+          <a
+            class="font-public-sans text-sm tracking-wide text-[#1c1b1a]/70 hover:text-[#560004] transition-colors"
+            href="#"
+            >Dribbble</a
+          >
+          <a
+            class="font-public-sans text-sm tracking-wide text-[#1c1b1a]/70 hover:text-[#560004] transition-colors"
+            href="#"
+            >Newsletter</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

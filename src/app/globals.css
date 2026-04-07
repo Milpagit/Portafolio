@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-epilogue: "Epilogue", sans-serif;
+  --font-public-sans: "Public Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fdf9f6;
+  color: #1c1b1a;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.soft-glow:hover {
+  box-shadow: 0 10px 30px -10px rgba(86, 0, 4, 0.15);
+}
+
+.warm-card {
+  background: #ffffff;
+  border: 1px solid rgba(28, 27, 26, 0.05);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.warm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+}
+
+.bg-soft-texture {
+  background-color: #fdf9f6;
+  background-image: radial-gradient(#56000408 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+}
