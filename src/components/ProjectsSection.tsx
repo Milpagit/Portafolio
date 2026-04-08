@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
+import { useT } from "@/context/LangContext";
 
 export default function ProjectsSection() {
+  const t = useT();
   const { projects } = portfolioData;
 
   return (
@@ -11,15 +15,18 @@ export default function ProjectsSection() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <h2 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-              Selected <span className="text-primary">Experience</span>
+              {t.projects.sectionHeading}{" "}
+              <span className="text-primary">
+                {t.projects.sectionHighlight}
+              </span>
             </h2>
             <p className="text-on-surface-variant text-lg">
-              Una muestra de productos digitales donde la excelencia técnica se
-              une con el diseño propositivo.
+              {t.projects.sectionSubtitle}
             </p>
           </div>
           <div className="hidden md:flex items-center gap-3 text-secondary font-semibold text-sm tracking-widest uppercase">
-            <span className="w-12 h-0.5 bg-secondary/30" /> Portfolio [2026]
+            <span className="w-12 h-0.5 bg-secondary/30" />{" "}
+            {t.projects.portfolioLabel}
           </div>
         </div>
 
@@ -58,14 +65,14 @@ export default function ProjectsSection() {
                   {project.title}
                 </h3>
                 <p className="text-on-surface-variant text-sm mb-8 leading-relaxed">
-                  {project.description}
+                  {t.projects.descriptions[projects.indexOf(project)]}
                 </p>
                 <div className="mt-auto flex justify-between items-center pt-6 border-t border-outline-variant">
                   <a
                     href={project.caseStudyUrl}
                     className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:translate-x-1 transition-transform"
                   >
-                    Case Study
+                    {t.projects.caseStudy}
                     <span className="material-symbols-outlined text-sm">
                       arrow_forward
                     </span>

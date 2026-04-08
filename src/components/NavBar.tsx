@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { portfolioData } from "@/data/portfolio";
+import { useT } from "@/context/LangContext";
 
 export default function NavBar() {
+  const t = useT();
   const [activeSection, setActiveSection] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -22,12 +24,12 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const sectionMap: Record<string, string> = {
-    hero: "hero",
-    about: "about",
-    projects: "projects",
-    contact: "contact",
-  };
+  const navItems = [
+    { href: "#hero", label: t.nav.work, key: "hero" },
+    { href: "#about", label: t.nav.about, key: "about" },
+    { href: "#projects", label: t.nav.experience, key: "projects" },
+    { href: "#contact", label: t.nav.contact, key: "contact" },
+  ];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#fdf9f6]/80 backdrop-blur-md shadow-sm">
@@ -42,35 +44,31 @@ export default function NavBar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-10">
-          {portfolioData.navLinks.map((link) => {
-            const sectionId = link.href.replace("#", "");
-            const isActive = activeSection === sectionMap[sectionId];
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`font-headline tracking-tight leading-tight transition-colors ${
-                  isActive
-                    ? "text-[#560004] font-bold border-b-2 border-[#560004] pb-1"
-                    : "text-[#1c1b1a]/60 hover:text-[#560004]"
-                }`}
-              >
-                {link.label}
-              </a>
-            );
-          })}
+          {navItems.map((item) => (
+            <a
+              key={item.key}
+              href={item.href}
+              className={`font-headline tracking-tight leading-tight transition-colors ${
+                activeSection === item.key
+                  ? "text-[#560004] font-bold border-b-2 border-[#560004] pb-1"
+                  : "text-[#1c1b1a]/60 hover:text-[#560004]"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
 
         {/* CTA Buttons (desktop) */}
         <div className="hidden md:flex items-center gap-4">
           <button className="px-5 py-2 text-sm font-bold font-headline text-[#560004] hover:bg-[#f7f3f0] rounded-xl transition-all duration-300">
-            Download CV
+            {t.nav.downloadCV}
           </button>
           <a
             href="#contact"
             className="bg-[#560004] text-white px-6 py-2 rounded-xl font-bold font-headline hover:bg-[#7a0006] transition-all duration-300 active:scale-95"
           >
-            Contact
+            {t.nav.contact}
           </a>
         </div>
 
@@ -95,14 +93,14 @@ export default function NavBar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#fdf9f6] border-t border-[#e5e2df] px-8 py-6 flex flex-col gap-5">
-          {portfolioData.navLinks.map((link) => (
+          {navItems.map((item) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={item.key}
+              href={item.href}
               onClick={() => setMenuOpen(false)}
               className="font-headline text-lg text-[#1c1b1a]/70 hover:text-[#560004] transition-colors"
             >
-              {link.label}
+              {item.label}
             </a>
           ))}
           <a
@@ -110,7 +108,7 @@ export default function NavBar() {
             onClick={() => setMenuOpen(false)}
             className="mt-2 bg-[#560004] text-white px-6 py-3 rounded-xl font-bold font-headline text-center hover:bg-[#7a0006] transition-all"
           >
-            Contact
+            {t.nav.contact}
           </a>
         </div>
       )}

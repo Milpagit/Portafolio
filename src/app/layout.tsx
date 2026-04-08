@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Epilogue, Public_Sans } from "next/font/google";
 import "./globals.css";
+import { LangProvider } from "@/context/LangContext";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
@@ -45,7 +46,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body selection:bg-primary-container selection:text-on-primary-container">
-        {children}
+        <LangProvider>{children}</LangProvider>
       </body>
     </html>
   );

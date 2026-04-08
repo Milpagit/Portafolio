@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
+import { useT } from "@/context/LangContext";
 
 export default function HeroSection() {
-  const { heroHeading, role, bioParagraphs, profileImageUrl, brand } =
-    portfolioData;
+  const t = useT();
+  const { profileImageUrl, brand } = portfolioData;
 
   return (
     <section
@@ -14,29 +17,29 @@ export default function HeroSection() {
         {/* Left column */}
         <div className="lg:col-span-7 z-10">
           <div className="inline-block px-4 py-1.5 rounded-full bg-primary-container text-primary text-sm font-semibold tracking-wide mb-8">
-            {role}
+            {t.hero.role}
           </div>
           <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-on-background mb-8">
-            {heroHeading.part1}{" "}
-            <span className="text-primary">{heroHeading.highlight}</span>{" "}
-            {heroHeading.part2}
+            {t.hero.heading.part1}{" "}
+            <span className="text-primary">{t.hero.heading.highlight}</span>{" "}
+            {t.hero.heading.part2}
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed font-normal mb-10">
-            {bioParagraphs[0]}
+            {t.hero.bio}
           </p>
           <div className="flex flex-wrap gap-5">
             <a
               href="#projects"
               className="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold font-headline flex items-center gap-3 soft-glow transition-all hover:bg-[#7a0006]"
             >
-              View My Work
+              {t.hero.cta}
               <span className="material-symbols-outlined text-xl">east</span>
             </a>
             <a
               href="#about"
               className="px-8 py-4 rounded-xl font-bold font-headline text-on-surface border border-outline-variant hover:bg-surface-container-high transition-all"
             >
-              Technical Stack
+              {t.hero.stack}
             </a>
           </div>
         </div>
@@ -55,11 +58,9 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             <div className="absolute bottom-6 left-6 text-white">
               <p className="font-headline font-bold text-xl">
-                Human-Centric Approach
+                {t.hero.imageCaption}
               </p>
-              <p className="text-sm opacity-90">
-                Architecture designed for people
-              </p>
+              <p className="text-sm opacity-90">{t.hero.imageSubCaption}</p>
             </div>
           </div>
           {/* Decorative blobs */}

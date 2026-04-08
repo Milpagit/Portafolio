@@ -1,6 +1,10 @@
+"use client";
+
 import { portfolioData } from "@/data/portfolio";
+import { useT } from "@/context/LangContext";
 
 export default function Footer() {
+  const t = useT();
   const { brand, social } = portfolioData;
   const year = new Date().getFullYear();
 
@@ -12,7 +16,7 @@ export default function Footer() {
             {brand}
           </div>
           <div className="font-body text-sm tracking-wide text-[#1c1b1a]/70">
-            © {year} Jesus Milpa Lino. Built for human connection.
+            © {year} Jesus Milpa Lino. {t.footer.tagline}
           </div>
         </div>
         <div className="flex gap-8">

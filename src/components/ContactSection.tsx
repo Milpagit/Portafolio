@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useT } from "@/context/LangContext";
+import { portfolioData } from "@/data/portfolio";
 
 export default function ContactSection() {
+  const t = useT();
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -19,7 +22,7 @@ export default function ContactSection() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const { name, email, message } = formState;
-    const mailtoLink = `mailto:jesus@example.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+    const mailtoLink = `mailto:${portfolioData.email}?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
     window.location.href = mailtoLink;
     setSubmitted(true);
   }
@@ -28,13 +31,11 @@ export default function ContactSection() {
     <section id="contact" className="py-32 px-8 bg-white">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tight mb-8">
-          Let&apos;s build something{" "}
-          <span className="text-primary">together.</span>
+          {t.contact.heading1}{" "}
+          <span className="text-primary">{t.contact.headingHighlight}</span>
         </h2>
         <p className="text-on-surface-variant text-lg mb-16 max-w-xl mx-auto leading-relaxed">
-          Actualmente busco nuevas oportunidades para participar en proyectos
-          ambiciosos y aportar soluciones escalables. Me encantaría escuchar
-          sobre tus metas.
+          {t.contact.subtitle}
         </p>
 
         {submitted ? (
@@ -43,12 +44,9 @@ export default function ContactSection() {
               check_circle
             </span>
             <p className="font-headline text-2xl font-bold text-on-surface mb-2">
-              ¡Mensaje enviado!
+              {t.contact.successTitle}
             </p>
-            <p className="text-on-surface-variant">
-              Tu cliente de correo se ha abierto. Me pondré en contacto contigo
-              pronto.
-            </p>
+            <p className="text-on-surface-variant">{t.contact.successBody}</p>
           </div>
         ) : (
           <form
@@ -61,7 +59,7 @@ export default function ContactSection() {
                   htmlFor="name"
                   className="text-sm font-bold text-secondary uppercase tracking-widest ml-1"
                 >
-                  Full Name
+                  {t.contact.nameLabel}
                 </label>
                 <input
                   id="name"
@@ -70,7 +68,7 @@ export default function ContactSection() {
                   required
                   value={formState.name}
                   onChange={handleChange}
-                  placeholder="Jane Doe"
+                  placeholder={t.contact.namePlaceholder}
                   className="w-full bg-white border border-outline-variant rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 focus:border-primary text-on-surface placeholder:text-outline-variant transition-all outline-none"
                 />
               </div>
@@ -79,7 +77,7 @@ export default function ContactSection() {
                   htmlFor="email"
                   className="text-sm font-bold text-secondary uppercase tracking-widest ml-1"
                 >
-                  Email Address
+                  {t.contact.emailLabel}
                 </label>
                 <input
                   id="email"
@@ -88,7 +86,7 @@ export default function ContactSection() {
                   required
                   value={formState.email}
                   onChange={handleChange}
-                  placeholder="jane@example.com"
+                  placeholder={t.contact.emailPlaceholder}
                   className="w-full bg-white border border-outline-variant rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 focus:border-primary text-on-surface placeholder:text-outline-variant transition-all outline-none"
                 />
               </div>
@@ -98,7 +96,7 @@ export default function ContactSection() {
                 htmlFor="message"
                 className="text-sm font-bold text-secondary uppercase tracking-widest ml-1"
               >
-                Message
+                {t.contact.messageLabel}
               </label>
               <textarea
                 id="message"
@@ -107,7 +105,7 @@ export default function ContactSection() {
                 rows={5}
                 value={formState.message}
                 onChange={handleChange}
-                placeholder="Tell me about your project..."
+                placeholder={t.contact.messagePlaceholder}
                 className="w-full bg-white border border-outline-variant rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 focus:border-primary text-on-surface placeholder:text-outline-variant transition-all outline-none resize-none"
               />
             </div>
@@ -116,7 +114,7 @@ export default function ContactSection() {
                 type="submit"
                 className="bg-primary text-white px-12 py-5 rounded-2xl font-bold font-headline uppercase tracking-widest soft-glow transition-all hover:bg-[#7a0006] w-full md:w-auto"
               >
-                Send Message
+                {t.contact.sendButton}
               </button>
             </div>
           </form>

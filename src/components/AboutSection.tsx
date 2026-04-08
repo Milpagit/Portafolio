@@ -1,7 +1,11 @@
+"use client";
+
 import { portfolioData } from "@/data/portfolio";
+import { useT } from "@/context/LangContext";
 
 export default function AboutSection() {
-  const { aboutPhilosophy, stats, skills } = portfolioData;
+  const t = useT();
+  const { stats, skills } = portfolioData;
 
   return (
     <section id="about" className="py-32 px-8 bg-white">
@@ -10,14 +14,12 @@ export default function AboutSection() {
           {/* Left — philosophy text */}
           <div>
             <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight mb-8">
-              {aboutPhilosophy.heading.part1}{" "}
-              <span className="text-primary">
-                {aboutPhilosophy.heading.highlight}
-              </span>{" "}
-              {aboutPhilosophy.heading.part2}
+              {t.about.heading.part1}{" "}
+              <span className="text-primary">{t.about.heading.highlight}</span>{" "}
+              {t.about.heading.part2}
             </h2>
             <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed">
-              {aboutPhilosophy.paragraphs.map((p, i) => (
+              {t.about.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
@@ -27,7 +29,7 @@ export default function AboutSection() {
                   {stats.years}
                 </div>
                 <div className="text-sm font-semibold uppercase tracking-wider text-secondary">
-                  Years Experience
+                  {t.about.yearsLabel}
                 </div>
               </div>
               <div>
@@ -35,7 +37,7 @@ export default function AboutSection() {
                   {stats.projects}
                 </div>
                 <div className="text-sm font-semibold uppercase tracking-wider text-secondary">
-                  Projects Delivered
+                  {t.about.projectsLabel}
                 </div>
               </div>
             </div>
@@ -43,7 +45,7 @@ export default function AboutSection() {
 
           {/* Right — skill cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {skills.map((skill) => (
+            {skills.map((skill, i) => (
               <div
                 key={skill.name}
                 className="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/20 transition-colors"
@@ -66,7 +68,7 @@ export default function AboutSection() {
                   />
                 </div>
                 <p className="mt-4 text-sm text-on-surface-variant">
-                  {skill.description}
+                  {t.about.skills[i]}
                 </p>
               </div>
             ))}
