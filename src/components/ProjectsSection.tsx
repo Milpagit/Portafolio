@@ -45,6 +45,7 @@ export default function ProjectsSection() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  unoptimized
                 />
                 {/* Tags */}
                 <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
