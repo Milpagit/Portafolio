@@ -50,7 +50,7 @@ export const portfolioData = {
   },
   stats: {
     years: "2+",
-    projects: "15+",
+    projects: "11+",
   },
   profileImageUrl:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuATb4-SIglmWR8LliZTLlAloivvxCAg_Ts4BLVdX5aPPxCLk6JeQ9PTZdD6PiSOlJ9dPQmex-zQNNifW9Ls3hHjyzORQnBeDTqEEVvHcdzv8bhPXlPc_DCwWkuFpJTCEMdjvrgrOaKjityPYGQzXqRiRhe1EomHNJpXggg0WOL-d6Q9dXe-CvZgAI-gBH9w0iQq3qur-3nTX9y_M2Y-4QE5iMr8KViAEwW1-vtPwdniZKd5ZfPvLVgXvGTaHynSbSuHoMmfBeiHGog",
@@ -98,39 +98,58 @@ export const portfolioData = {
   ] as Skill[],
   projects: [
     {
-      title: "CashBlueprint",
+      title: "Pictionary Online",
       description:
-        'Aplicación de gestión financiera personal construida con arquitectura limpia. Automatiza el cálculo de "Saldo Libre" priorizando metas de ahorro y gastos fijos temporales.',
-      tags: ["#React", "#FastAPI"],
-      imageUrl:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuADpF54vGqQ1FQwuDEBTbYwUAQ7j4iS29tziw_Kk7HLonnwjVX5GEBhTC-fZbrmq8p-iqPgRvTeoL_Uv2bB83sJgZePDi8DbG4MG3u1m55FKP27aPZ2ziRQm8ws9-fsfzHB1AKo1NqDuSrovH3vM40NAxZRHGW1iTycbrQo7sqXoOBkX5c-KwDgCa-ggSv1uYt87C1Q4XQGoEfpTWfvNke5wa9MtriUHl_3kCplJSYo-VgR6XLOS620sc3ZkmR_shuZd550Xb4GVYA",
-      imageAlt: "CashBlueprint App",
-      caseStudyUrl: "#",
-      githubUrl: "https://github.com/",
+        "Juego de dibujo y adivinanzas en tiempo real para hasta 8 jugadores, con salas por código, canvas colaborativo, chat y puntuación dinámica. Backend en FastAPI con WebSockets y Redis como estado compartido.",
+      tags: ["#FastAPI", "#WebSockets", "#Redis"],
+      imageUrl: "/projects/pictionary.svg",
+      imageAlt: "Pictionary Online",
+      caseStudyUrl: "https://github.com/Milpagit/Pictionary-completo",
+      githubUrl: "https://github.com/Milpagit/Pictionary-completo",
       liveUrl: "#",
     },
     {
-      title: "Pictionary Online",
+      title: "Agenda Inteligente",
       description:
-        "Juego multijugador de dibujo en tiempo real con salas privadas, chat integrado y detección de palabras mediante websockets.",
-      tags: ["#Next.js", "#WebSockets"],
-      imageUrl:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuAom1PTd7snl-FCHWqtMLaebzTjiMhYU3zoPP-YlMOk6lI_2I46YjxDvg7IXdDgiELd9tLGot5G2PCjtCE0xN6u60_G0e8L4haHCTESszHUTty13jJYaotcfqfh6XBYcqZ9mhxam7X61U73IRFwfoSONkfDfA8zfMQQJaT4DDpD3z8C1p7tFf4CtQUi-_UfiPBnnhbP3zs5v5YeEcp2C3nm3fTanVq0C7wRJIUUR0bsEgjfr1dwOoerNhE_KXIWiSUyW8J90ZQEh3A",
-      imageAlt: "Pictionary Online",
-      caseStudyUrl: "#",
-      githubUrl: "https://github.com/",
+        "Calendario inteligente (proyecto de tesis) para gestionar eventos personales, con autenticación de usuarios y visualización de eventos de otros usuarios. Frontend en React con Redux Toolkit y backend en Node.js, Express y MongoDB.",
+      tags: ["#React", "#Redux", "#Node.js"],
+      imageUrl: "/projects/agenda.svg",
+      imageAlt: "Agenda Inteligente",
+      caseStudyUrl: "https://github.com/Milpagit/Agenda-Inteligente",
+      githubUrl: "https://github.com/Milpagit/Agenda-Inteligente",
       liveUrl: "#",
     },
     {
       title: "OpenDocs-AI",
       description:
-        "Micro-SaaS que automatiza la creación de documentación técnica. El usuario pega la URL de su repositorio y la herramienta genera un archivo Markdown listo para usar.",
-      tags: ["#Python", "#AI"],
-      imageUrl:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuCJRqn-aXC8Y5lXtT_dMrpdofhpE8I_ka4Nsr-eNa-slP_AA-FcU2-uezC68m3n4xgJ2uaRvdsvQPQx69emu0SavAjjGZP_nylHBR8ucer2fSJwFNO24_EH7REihpU4r-gQP9T9qcvylLs4WY_AIvc39sGkDKIM8ouwm4dmrVqpj7iCiV50P0w8Al8IN5Emt4WvnS0QwRPzQzHSJAQ1sdgsuqI2ZYqsOjyP1ojZaCwSkqtMf8q5v5DG58foVKoRk_6niNTh48Dih4k",
+        "Micro-SaaS que automatiza la documentación técnica: pegas la URL de tu repositorio y obtienes un archivo Markdown listo para usar, apoyado en la IA generativa de Google. Construido con Next.js y TypeScript.",
+      tags: ["#Next.js", "#TypeScript", "#AI"],
+      imageUrl: "/projects/opendocs.svg",
       imageAlt: "OpenDocs-AI",
-      caseStudyUrl: "#",
-      githubUrl: "https://github.com/",
+      caseStudyUrl: "https://github.com/Milpagit/OpenDocs-AI",
+      githubUrl: "https://github.com/Milpagit/OpenDocs-AI",
+      liveUrl: "#",
+    },
+    {
+      title: "Blogger Multi-Agente",
+      description:
+        "Agencia de contenido con tres agentes (investigador, redactor y editor) que colaboran para escribir un artículo a partir de un tema. Usa LLMs locales, RAG con ChromaDB para el estilo de escritura y streaming SSE. FastAPI + Next.js.",
+      tags: ["#FastAPI", "#LLM", "#RAG"],
+      imageUrl: "/projects/blogger.svg",
+      imageAlt: "Blogger Multi-Agente",
+      caseStudyUrl: "https://github.com/Milpagit/Blogger",
+      githubUrl: "https://github.com/Milpagit/Blogger",
+      liveUrl: "#",
+    },
+    {
+      title: "Agrupación UAEH",
+      description:
+        "Herramientas de minería de datos educativos para estudiantes de la UAEH: preprocesamiento de datos, agrupación con K-means y un modelo de regresión que predice la aprobación.",
+      tags: ["#Python", "#Machine Learning"],
+      imageUrl: "/projects/uaeh.svg",
+      imageAlt: "Agrupación UAEH",
+      caseStudyUrl: "https://github.com/Milpagit/Agrupacion-de-estudiantes-UAEH-kmeans",
+      githubUrl: "https://github.com/Milpagit/Agrupacion-de-estudiantes-UAEH-kmeans",
       liveUrl: "#",
     },
   ] as Project[],
@@ -142,7 +161,7 @@ export const portfolioData = {
   ] as NavLink[],
   social: {
     linkedin: "https://linkedin.com/in/",
-    github: "https://github.com/",
+    github: "https://github.com/Milpagit",
     dribbble: "#",
     newsletter: "#",
   },

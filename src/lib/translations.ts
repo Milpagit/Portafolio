@@ -49,9 +49,11 @@ export const translations = {
       portfolioLabel: "Portfolio [2026]",
       caseStudy: "Case Study",
       descriptions: [
-        'Personal finance management app built with clean architecture. Automates the calculation of "Free Balance" by prioritizing savings goals and fixed temporary expenses.',
-        "Real-time multiplayer drawing game with private rooms, integrated chat, and word detection via WebSockets.",
-        "Micro-SaaS that automates the creation of technical documentation. Paste your repository URL and get a ready-to-copy Markdown file.",
+        "Real-time drawing and guessing game for up to 8 players, with code-based rooms, a collaborative canvas, chat and dynamic scoring. FastAPI backend with WebSockets and Redis as shared state.",
+        "Smart calendar (thesis project) to manage personal events, with user authentication and visibility of other users' events. React + Redux Toolkit frontend and a Node.js, Express and MongoDB backend.",
+        "Micro-SaaS that automates technical documentation: paste your repository URL and get a ready-to-use Markdown file, powered by Google's generative AI. Built with Next.js and TypeScript.",
+        "Multi-agent content agency: three agents (researcher, writer and editor) collaborate to write a blog article from a topic. Uses local LLMs, RAG with ChromaDB for writing style and SSE streaming. FastAPI + Next.js.",
+        "Educational data mining tools for UAEH students: data preprocessing, K-means clustering and a regression model that predicts course approval.",
       ],
     },
     contact: {
@@ -122,9 +124,11 @@ export const translations = {
       portfolioLabel: "Portafolio [2026]",
       caseStudy: "Caso de Estudio",
       descriptions: [
-        'Aplicación de gestión financiera personal construida con arquitectura limpia. Automatiza el cálculo de "Saldo Libre" priorizando metas de ahorro y gastos fijos temporales.',
-        "Juego multijugador de dibujo en tiempo real con salas privadas, chat integrado y detección de palabras mediante websockets.",
-        "Micro-SaaS que automatiza la creación de documentación técnica. El usuario pega la URL de su repositorio y la herramienta genera un archivo Markdown listo para usar.",
+        "Juego de dibujo y adivinanzas en tiempo real para hasta 8 jugadores, con salas por código, canvas colaborativo, chat y puntuación dinámica. Backend en FastAPI con WebSockets y Redis como estado compartido.",
+        "Calendario inteligente (proyecto de tesis) para gestionar eventos personales, con autenticación de usuarios y visualización de eventos de otros usuarios. Frontend en React con Redux Toolkit y backend en Node.js, Express y MongoDB.",
+        "Micro-SaaS que automatiza la documentación técnica: pegas la URL de tu repositorio y obtienes un archivo Markdown listo para usar, apoyado en la IA generativa de Google. Construido con Next.js y TypeScript.",
+        "Agencia de contenido con tres agentes (investigador, redactor y editor) que colaboran para escribir un artículo a partir de un tema. Usa LLMs locales, RAG con ChromaDB para el estilo de escritura y streaming SSE. FastAPI + Next.js.",
+        "Herramientas de minería de datos educativos para estudiantes de la UAEH: preprocesamiento de datos, agrupación con K-means y un modelo de regresión que predice la aprobación.",
       ],
     },
     contact: {
